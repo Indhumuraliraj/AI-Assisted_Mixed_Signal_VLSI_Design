@@ -1,0 +1,104 @@
+library (design_mux) {
+  comment                        : "";
+  delay_model                    : table_lookup;
+  simulation                     : false;
+  capacitive_load_unit (1,pF);
+  leakage_power_unit             : 1pW;
+  current_unit                   : "1A";
+  pulling_resistance_unit        : "1kohm";
+  time_unit                      : "1ns";
+  voltage_unit                   : "1v";
+  library_features(report_delay_calculation);
+
+  input_threshold_pct_rise : 50;
+  input_threshold_pct_fall : 50;
+  output_threshold_pct_rise : 50;
+  output_threshold_pct_fall : 50;
+  slew_lower_threshold_pct_rise : 20;
+  slew_lower_threshold_pct_fall : 20;
+  slew_upper_threshold_pct_rise : 80;
+  slew_upper_threshold_pct_fall : 80;
+  slew_derate_from_library : 1.0;
+
+
+  nom_process                    : 1.0;
+  nom_temperature                : 25.0;
+  nom_voltage                    : 1.80;
+
+  type ("mask_rev_in") {
+    base_type : array;
+    data_type : bit;
+    bit_width : 4;
+    bit_from : 3;
+    bit_to : 0;
+  }
+
+  cell ("design_mux") {
+    pin("CSB") {
+      direction : input;
+      capacitance : 0.0022;
+    }
+    pin("RST") {
+      direction : input;
+      capacitance : 0.0029;
+    }
+    pin("SCK") {
+      direction : input;
+      capacitance : 0.0022;
+    }
+    pin("SDI") {
+      direction : input;
+      capacitance : 0.0029;
+    }
+    pin("out") {
+      direction : output;
+      capacitance : 0.0000;
+    }
+    pin("select") {
+      direction : input;
+      capacitance : 0.0119;
+    }
+    pin("trap") {
+      direction : input;
+      capacitance : 0.0025;
+    }
+    pin("VPWR") {
+      direction : input;
+      capacitance : 0.0000;
+    }
+    pin("VGND") {
+      direction : input;
+      capacitance : 0.0000;
+    }
+    pin("VDD") {
+      direction : input;
+      capacitance : 0.0000;
+    }
+    pin("VSS") {
+      direction : input;
+      capacitance : 0.0000;
+    }
+    bus("mask_rev_in") {
+      bus_type : mask_rev_in;
+      direction : input;
+      capacitance : 0.0000;
+    pin("mask_rev_in[3]") {
+      direction : input;
+      capacitance : 0.0034;
+    }
+    pin("mask_rev_in[2]") {
+      direction : input;
+      capacitance : 0.0029;
+    }
+    pin("mask_rev_in[1]") {
+      direction : input;
+      capacitance : 0.0035;
+    }
+    pin("mask_rev_in[0]") {
+      direction : input;
+      capacitance : 0.0033;
+    }
+    }
+  }
+
+}
