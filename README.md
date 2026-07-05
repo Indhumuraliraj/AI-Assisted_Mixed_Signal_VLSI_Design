@@ -21,7 +21,7 @@ Mixed-signal design refers to integrating analog circuit blocks (which handle co
 ### 2.1 Input Files
 
 **AI Prompt used:**
-> "I have an analog macro layout `AMUX2_3V.mag` for a 2:1 mux in SKY130A. Explain the steps to generate an abstract LEF view and a GDSII file from this Magic layout, and what fields (CLASS, SITE, SIZE, pin DIRECTION/USE) must be set correctly in the LEF for OpenLane to accept it as a hard macro."
+>Using the mixed-signal flow from the GitHub repository praharshapm/vsdmixedsignalflow as a reference, generate all required input files for my design_mux physical design and give a correct config.json.
 
 | File | Type | Purpose |
 |---|---|---|
