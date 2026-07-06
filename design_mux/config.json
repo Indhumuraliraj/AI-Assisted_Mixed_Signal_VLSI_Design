@@ -1,0 +1,34 @@
+{
+    "DESIGN_NAME": "design_mux",
+
+    "VERILOG_FILES": "dir::src/design_mux.v",
+       
+    "VERILOG_FILES_BLACKBOX": "dir::src/AMUX2_3V.v",
+
+    "PDK": "sky130A",
+    "STD_CELL_LIBRARY": "sky130_fd_sc_hd",
+
+    "CLOCK_PORT": "select",
+    "CLOCK_PERIOD": 10.0,
+
+    "DESIGN_IS_CORE": true,
+    "FP_SIZING": "absolute",
+    "DIE_AREA": [0, 0, 100, 100],
+    "FP_CORE_UTIL": 30,
+    "PL_TARGET_DENSITY": 0.55,
+
+    "EXTRA_LEFS": "dir::lef/AMUX2_3V.lef",
+    "EXTRA_LIBS": "dir::lib/AMUX2_3V.lib",
+
+    "EXTRA_GDS_FILES": "dir::gds/AMUX2_3V.gds",
+
+    "MACRO_PLACEMENT_CFG": "dir::cfg/macro.cfg",
+
+    "FP_PDN_MACRO_HOOKS": "AMUX2_3V VDD VSS VPWR VGND",
+    "VDD_NETS": ["VPWR", "VDD"],
+    "GND_NETS": ["VGND", "VSS"],
+    "FP_PDN_VOFFSET": 4,
+    "FP_PDN_VPITCH": 15,
+    "FP_PDN_HOFFSET": 4,
+    "FP_PDN_HPITCH": 15
+}
