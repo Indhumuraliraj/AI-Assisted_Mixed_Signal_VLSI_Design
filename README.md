@@ -53,6 +53,7 @@ design_mux/
 | **Model** | Claude Sonnet |
 | **Role in workflow** | Generated candidate RTL/config files from the reference repo description, explained Magic→LEF/GDS export steps, and helped triage/diagnose each terminal error (PDN pitch sizing, DEF cell-name typo, missing LIB threshold attributes, LVS `EXT_NETLIST` requirement) before manual fixes were applied and verified against tool output |
 
+---
 
 ## 1. Introduction to Mixed-Signal Design
 
